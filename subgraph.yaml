@@ -21,3 +21,22 @@ dataSources:
         - event: primarySaleMint(indexed uint256,indexed uint64,address,address,uint256,indexed uint64)
           handler: handleprimarySaleMint
       file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: EventContract
+    network: matic
+    source:
+      address: "0xcDA348fF8C175f305Ed8682003ec6F8743067f79"
+      abi: EventContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - newEventRegistered
+      abis:
+        - name: EventContract
+          file: ./abis/EventContract.json
+      eventHandlers:
+        - event: newEventRegistered(indexed address,indexed uint256,string,indexed uint256)
+          handler: handlenewEventRegistered
+      file: ./src/mapping.ts

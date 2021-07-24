@@ -116,57 +116,6 @@ export class Event extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get accountPublicKeyHash(): string | null {
-    let value = this.get("accountPublicKeyHash");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
-  }
-
-  set accountPublicKeyHash(value: string | null) {
-    if (value === null) {
-      this.unset("accountPublicKeyHash");
-    } else {
-      this.set("accountPublicKeyHash", Value.fromString(value as string));
-    }
-  }
-
-  get ticketIssuerID(): string | null {
-    let value = this.get("ticketIssuerID");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
-  }
-
-  set ticketIssuerID(value: string | null) {
-    if (value === null) {
-      this.unset("ticketIssuerID");
-    } else {
-      this.set("ticketIssuerID", Value.fromString(value as string));
-    }
-  }
-
-  get ticketIssuerName(): string | null {
-    let value = this.get("ticketIssuerName");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
-  }
-
-  set ticketIssuerName(value: string | null) {
-    if (value === null) {
-      this.unset("ticketIssuerName");
-    } else {
-      this.set("ticketIssuerName", Value.fromString(value as string));
-    }
-  }
-
   get eventName(): string | null {
     let value = this.get("eventName");
     if (value === null || value.kind == ValueKind.NULL) {
@@ -181,40 +130,6 @@ export class Event extends Entity {
       this.unset("eventName");
     } else {
       this.set("eventName", Value.fromString(value as string));
-    }
-  }
-
-  get currency(): string | null {
-    let value = this.get("currency");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
-  }
-
-  set currency(value: string | null) {
-    if (value === null) {
-      this.unset("currency");
-    } else {
-      this.set("currency", Value.fromString(value as string));
-    }
-  }
-
-  get shopUrl(): string | null {
-    let value = this.get("shopUrl");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
-  }
-
-  set shopUrl(value: string | null) {
-    if (value === null) {
-      this.unset("shopUrl");
-    } else {
-      this.set("shopUrl", Value.fromString(value as string));
     }
   }
 

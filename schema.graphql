@@ -7,12 +7,7 @@ type Ticket @entity {
 
 type Event @entity {
   id: ID!
-  accountPublicKeyHash: String
-  ticketIssuerID: String
-  ticketIssuerName: String
   eventName: String
-  currency: String
-  shopUrl: String
   imageUrl: String
   startTime: BigInt
   endTime: BigInt
