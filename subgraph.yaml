@@ -1,4 +1,6 @@
 specVersion: 0.0.2
+description: Create a subgraph of NFT Tickets using GET Protocol (https://get-protocol.io).
+repository: https://github.com/apuyou/graph-get-nft-ticket
 schema:
   file: ./schema.graphql
 dataSources:
