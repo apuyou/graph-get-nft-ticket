@@ -115,4 +115,13 @@ export class Event extends Entity {
       this.set("eventName", Value.fromString(value as string));
     }
   }
+
+  get tickets(): Array<string> {
+    let value = this.get("tickets");
+    return value.toStringArray();
+  }
+
+  set tickets(value: Array<string>) {
+    this.set("tickets", Value.fromStringArray(value));
+  }
 }

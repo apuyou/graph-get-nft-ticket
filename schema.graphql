@@ -7,4 +7,5 @@ type Ticket @entity {
 type Event @entity {
   id: ID!
   eventName: String
+  tickets: [Ticket!]! @derivedFrom(field: "event")
 }
