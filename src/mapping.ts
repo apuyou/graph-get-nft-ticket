@@ -11,6 +11,6 @@ export function handleprimarySaleMint(event: primarySaleMint): void {
 
 export function handlenewEventRegistered(event: newEventRegistered): void {
   let entity = new Event(event.params.eventAddress.toHex());
-  entity.eventName = event.params.eventName;
+  entity.name = event.params.eventName;
   entity.save();
 }

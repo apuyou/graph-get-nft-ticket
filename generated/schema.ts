@@ -99,8 +99,8 @@ export class Event extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get eventName(): string | null {
-    let value = this.get("eventName");
+  get name(): string | null {
+    let value = this.get("name");
     if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
@@ -108,11 +108,11 @@ export class Event extends Entity {
     }
   }
 
-  set eventName(value: string | null) {
+  set name(value: string | null) {
     if (value === null) {
-      this.unset("eventName");
+      this.unset("name");
     } else {
-      this.set("eventName", Value.fromString(value as string));
+      this.set("name", Value.fromString(value as string));
     }
   }
 
