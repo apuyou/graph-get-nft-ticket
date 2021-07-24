@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -10,47 +10,14 @@ dataSources:
       abi: Contract
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.2
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - ConfigurationChanged
-        - ConfigurationChangedEcon
-        - colleterizedMint
-        - illegalScan
-        - nftClaimed
-        - nftMinted
-        - nftTokenURIEdited
         - primarySaleMint
-        - saleCollaterizedIntentory
-        - secondarySale
-        - ticketInvalidated
-        - ticketScanned
       abis:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: ConfigurationChanged(address,address,address,address)
-          handler: handleConfigurationChanged
-        - event: ConfigurationChangedEcon(address,address)
-          handler: handleConfigurationChangedEcon
-        - event: colleterizedMint(indexed uint256,indexed uint64,address,address,uint256,indexed uint64)
-          handler: handlecolleterizedMint
-        - event: illegalScan(indexed uint256,indexed uint64,indexed uint64)
-          handler: handleillegalScan
-        - event: nftClaimed(indexed uint256,indexed uint64,address,indexed uint64)
-          handler: handlenftClaimed
-        - event: nftMinted(indexed uint256,indexed address)
-          handler: handlenftMinted
-        - event: nftTokenURIEdited(indexed uint256,indexed uint64,string)
-          handler: handlenftTokenURIEdited
         - event: primarySaleMint(indexed uint256,indexed uint64,address,address,uint256,indexed uint64)
           handler: handleprimarySaleMint
-        - event: saleCollaterizedIntentory(indexed uint256,indexed uint64,address,indexed uint64)
-          handler: handlesaleCollaterizedIntentory
-        - event: secondarySale(indexed uint256,indexed uint64,address,address,uint256,indexed uint64)
-          handler: handlesecondarySale
-        - event: ticketInvalidated(indexed uint256,indexed uint64,address,indexed uint64)
-          handler: handleticketInvalidated
-        - event: ticketScanned(indexed uint256,indexed uint64,indexed uint64)
-          handler: handleticketScanned
       file: ./src/mapping.ts

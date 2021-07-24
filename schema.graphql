@@ -1,6 +1,21 @@
-type ExampleEntity @entity {
+type Ticket @entity {
   id: ID!
-  count: BigInt!
-  addressBouncer: Bytes! # address
-  addressMetadata: Bytes! # address
+  owner: Bytes
+  primaryPrice: BigInt
+  event: Event!
+}
+
+type Event @entity {
+  id: ID!
+  accountPublicKeyHash: String
+  ticketIssuerID: String
+  ticketIssuerName: String
+  eventName: String
+  currency: String
+  shopUrl: String
+  imageUrl: String
+  startTime: BigInt
+  endTime: BigInt
+  latitude: BigDecimal
+  longitude: BigDecimal
 }
