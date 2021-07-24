@@ -1,16 +1,10 @@
 type Ticket @entity {
   id: ID!
   owner: Bytes
-  primaryPrice: BigInt
   event: Event!
 }
 
 type Event @entity {
   id: ID!
   eventName: String
-  imageUrl: String
-  startTime: BigInt
-  endTime: BigInt
-  latitude: BigDecimal
-  longitude: BigDecimal
 }

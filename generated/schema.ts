@@ -59,23 +59,6 @@ export class Ticket extends Entity {
     }
   }
 
-  get primaryPrice(): BigInt | null {
-    let value = this.get("primaryPrice");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toBigInt();
-    }
-  }
-
-  set primaryPrice(value: BigInt | null) {
-    if (value === null) {
-      this.unset("primaryPrice");
-    } else {
-      this.set("primaryPrice", Value.fromBigInt(value as BigInt));
-    }
-  }
-
   get event(): string {
     let value = this.get("event");
     return value.toString();
@@ -130,91 +113,6 @@ export class Event extends Entity {
       this.unset("eventName");
     } else {
       this.set("eventName", Value.fromString(value as string));
-    }
-  }
-
-  get imageUrl(): string | null {
-    let value = this.get("imageUrl");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toString();
-    }
-  }
-
-  set imageUrl(value: string | null) {
-    if (value === null) {
-      this.unset("imageUrl");
-    } else {
-      this.set("imageUrl", Value.fromString(value as string));
-    }
-  }
-
-  get startTime(): BigInt | null {
-    let value = this.get("startTime");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toBigInt();
-    }
-  }
-
-  set startTime(value: BigInt | null) {
-    if (value === null) {
-      this.unset("startTime");
-    } else {
-      this.set("startTime", Value.fromBigInt(value as BigInt));
-    }
-  }
-
-  get endTime(): BigInt | null {
-    let value = this.get("endTime");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toBigInt();
-    }
-  }
-
-  set endTime(value: BigInt | null) {
-    if (value === null) {
-      this.unset("endTime");
-    } else {
-      this.set("endTime", Value.fromBigInt(value as BigInt));
-    }
-  }
-
-  get latitude(): BigDecimal | null {
-    let value = this.get("latitude");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toBigDecimal();
-    }
-  }
-
-  set latitude(value: BigDecimal | null) {
-    if (value === null) {
-      this.unset("latitude");
-    } else {
-      this.set("latitude", Value.fromBigDecimal(value as BigDecimal));
-    }
-  }
-
-  get longitude(): BigDecimal | null {
-    let value = this.get("longitude");
-    if (value === null || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toBigDecimal();
-    }
-  }
-
-  set longitude(value: BigDecimal | null) {
-    if (value === null) {
-      this.unset("longitude");
-    } else {
-      this.set("longitude", Value.fromBigDecimal(value as BigDecimal));
     }
   }
 }
