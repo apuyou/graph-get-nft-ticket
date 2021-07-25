@@ -2,6 +2,8 @@
 
 Create a subgraph of NFT Tickets using GET Protocol (https://get-protocol.io).
 
+Subgraph Explorer: https://thegraph.com/legacy-explorer/subgraph/apuyou/get-nft-ticket
+
 ## Available queries
 
 ```graphql
